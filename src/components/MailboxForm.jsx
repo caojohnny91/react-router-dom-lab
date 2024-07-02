@@ -32,6 +32,7 @@ const MailboxForm = (props) => {
           type="text"
           id="boxholder"
           name="boxholder"
+          placeholder="Boxholder name"
           value={formData.boxholder}
           onChange={handleChange}
         />
