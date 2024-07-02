@@ -9,7 +9,7 @@ const MailboxDetails = (props) => {
 
   return (
     <>
-      <h1>{selectedBox._id}</h1>
+      <h1>Mailbox {selectedBox._id}</h1>
       <h2>Details</h2>
 
       <dl>

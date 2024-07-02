@@ -15,8 +15,8 @@ function App() {
   const [mailboxes, setMailboxes] = useState([initialState]);
 
   const addBox = (newMailboxData) => {
-    newMailboxData._Id = mailboxes.length + 1;
-    setMailboxes(...mailboxes, newMailboxData);
+    newMailboxData._id = mailboxes.length + 1;
+    setMailboxes([...mailboxes, newMailboxData]);
   };
 
   return (
@@ -32,11 +32,20 @@ function App() {
           }
         />
 
-        <Route path="/mailboxes" element={<MailboxList />} />
+        <Route
+          path="/mailboxes"
+          element={<MailboxList mailboxes={mailboxes} />}
+        />
 
-        <Route path="/new-mailboxes" element={<MailboxForm />} />
+        <Route
+          path="/new-mailboxes"
+          element={<MailboxForm addBox={addBox} />}
+        />
 
-        <Route path="/mailboxes/:mailboxId" element={<MailboxDetails />} />
+        <Route
+          path="/mailboxes/:mailboxId"
+          element={<MailboxDetails mailboxes={mailboxes} />}
+        />
       </Routes>
     </>
   );
